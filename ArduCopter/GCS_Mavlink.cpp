@@ -989,6 +989,7 @@ GCS_MAVLINK::data_stream_send(void)
         send_message(MSG_EKF_STATUS_REPORT);
         send_message(MSG_VIBRATION);
         send_message(MSG_RPM);
+        send_message(MSG_LANDING_TARGET);
     }
 }
 
