@@ -714,6 +714,13 @@ bool GCS_MAVLINK::try_send_message(enum ap_message id)
 #endif
         break;
 
+    case MSG_LANDING_TARGET:
+#if PRECISION_LANDING == ENABLED
+        CHECK_PAYLOAD_SIZE(LANDING_TARGET);
+        copter.precland.send_landing_target(chan);
+#endif
+        break;
+
     case MSG_GIMBAL_REPORT:
 #if MOUNT == ENABLED
         CHECK_PAYLOAD_SIZE(GIMBAL_REPORT);
